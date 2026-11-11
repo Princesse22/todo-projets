@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Todo par projets</title>
+  <style>
+    body { font-family: Arial, sans-serif; max-width: 700px; margin: 30px auto; padding: 0 12px; }
+    .colonnes { display: flex; gap: 24px; }
+    .colonnes > section { flex: 1; }
+    ul { list-style: none; padding: 0; }
+    li { padding: 6px; margin: 4px 0; border: 1px solid #ccc; border-radius: 4px; }
+    #projets li { cursor: pointer; }
+    #projets li.actif { background: #e6f0ff; border-color: #4a90e2; }
+    .terminee { text-decoration: line-through; color: gray; }
+    button { margin-left: 6px; }
+  </style>
+</head>
+<body>
+  <h1>Todo par projets</h1>
+  <div class="colonnes">
+    <section>
+      <h2>Projets</h2>
+      <form id="form-projet">
+        <input id="nom-projet" placeholder="Nouveau projet">
+        <button type="submit">Ajouter</button>
+      </form>
+      <ul id="projets"></ul>
+    </section>
+    <section id="zone-taches" hidden>
+      <h2>Tâches</h2>
+      <form id="form-tache">
+        <input id="titre-tache" placeholder="Nouvelle tâche">
+        <button type="submit">Ajouter</button>
+      </form>
+      <ul id="taches"></ul>
+    </section>
+  </div>
+  <script type="module" src="src/app.js"></script>
+</body>
+</html>
